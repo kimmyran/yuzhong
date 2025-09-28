@@ -13,17 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download and install Visual Studio Code (Windows)
+      - name: Download Visual Studio Code installer
         run: |
           Invoke-WebRequest -Uri "https://update.code.visualstudio.com/latest/win32-x64-user/stable" -OutFile "VSCodeSetup.exe"
-          Start-Process -FilePath "VSCodeSetup.exe" -ArgumentList "/VERYSILENT" -Wait
 
-      - name: Download and install Qoder (Windows)
+      - name: Download Qoder installer
         run: |
           Invoke-WebRequest -Uri "https://sourceforge.net/projects/qoder/files/QoderUserSetup-x64.exe/download" -OutFile "QoderUserSetup-x64.exe"
-          Start-Process -FilePath "QoderUserSetup-x64.exe" -ArgumentList "/S" -Wait
 
-      - name: Verify installations
+      - name: Verify downloads
         run: |
-          Get-Command code -ErrorAction SilentlyContinue
-          Get-Item "C:\Users\runneradmin\AppData\Local\Programs\Qoder\Qoder.exe" -ErrorAction SilentlyContinue
+          dir *.exe
