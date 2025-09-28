@@ -17,9 +17,9 @@ jobs:
         run: |
           Invoke-WebRequest -Uri "https://update.code.visualstudio.com/latest/win32-x64-user/stable" -OutFile "VSCodeSetup.exe"
 
-      - name: Download Qoder installer
-        run: |
-          Invoke-WebRequest -Uri "https://sourceforge.net/projects/qoder/files/QoderUserSetup-x64.exe/download" -OutFile "QoderUserSetup-x64.exe"
+      # - name: Download Qoder installer
+      #   run: |
+      #     Invoke-WebRequest -Uri "https://sourceforge.net/projects/qoder/files/QoderUserSetup-x64.exe/download" -OutFile "QoderUserSetup-x64.exe"
 
       - name: Verify downloads
         run: |
