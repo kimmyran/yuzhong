@@ -1,4 +1,4 @@
-name: qoder
+name: tusb
 
 on:
   push:
@@ -12,11 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Download and install Discord (Windows)
-        run: |
-          Invoke-WebRequest -Uri "https://discord.com/api/download?platform=win" -OutFile "DiscordSetup.exe"
-          Start-Process -FilePath "DiscordSetup.exe" -ArgumentList "/S" -Wait
 
       - name: Download and install Visual Studio Code (Windows)
         run: |
